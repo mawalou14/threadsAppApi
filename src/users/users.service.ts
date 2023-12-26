@@ -8,10 +8,13 @@ import { Model } from 'mongoose';
 @Injectable()
 export class UsersService {
 
-  constructor(@InjectModel(User.name) private userModel: Model<User>) {}
-  
+  constructor(@InjectModel(User.name) private userModel: Model<User>) { }
+
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    const userToSave = new this.userModel({
+      name: 'Mouhamadou Awalou'
+    });
+    return userToSave.save();
   }
 
   findAll() {
