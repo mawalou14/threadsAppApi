@@ -6,9 +6,14 @@ import { CommentsModule } from './comments/comments.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [UsersModule, CommentsModule,
-    MongooseModule.forRoot('mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/?retryWrites=true&w=majority')],
+  imports: [
+    UsersModule,
+    CommentsModule,
+    MongooseModule.forRoot(
+      'mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/?retryWrites=true&w=majority',
+    ),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {  }
+export class AppModule {}
