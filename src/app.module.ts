@@ -10,10 +10,10 @@ import { MongooseModule } from '@nestjs/mongoose';
     UsersModule,
     CommentsModule,
     MongooseModule.forRoot(
-      'mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/?retryWrites=true&w=majority',
+      'mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/threads?retryWrites=true&w=majority',
     ),
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {  }
