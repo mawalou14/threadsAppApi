@@ -18,7 +18,7 @@ export class CommentsService {
   }
 
   findAll() {
-    return this.commentModel.find().exec();
+    return this.commentModel.find().populate(['user']).exec();
   }
 
   findOne(id: number) {
