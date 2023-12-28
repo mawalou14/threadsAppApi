@@ -4,7 +4,9 @@ import { User } from 'src/users/schemas/user.schema';
 
 export type CommentDocument = HydratedDocument<Comment>;
 
-@Schema()
+@Schema({
+  timestamps: true,
+})
 export class Comment {
   @Prop()
   text: string;
