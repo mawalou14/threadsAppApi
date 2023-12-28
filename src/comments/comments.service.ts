@@ -9,7 +9,12 @@ import { InjectModel } from '@nestjs/mongoose';
 export class CommentsService {
   constructor(@InjectModel(Comment.name) private commentModel: Model<Comment>) { }
   create(createCommentDto: CreateCommentDto) {
-    return 'This action adds a new comment';
+    const createdComment = this.commentModel.create({
+      text: createCommentDto.text,
+      parent: createCommentDto.parentId || null,
+      user: createCommentDto.userId
+    })
+    return createdComment;
   }
 
   findAll() {

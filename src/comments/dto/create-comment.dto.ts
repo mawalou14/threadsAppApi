@@ -3,7 +3,7 @@ import { IsNotEmpty, IsString } from "class-validator";
 export class CreateCommentDto {
     @IsString()
     @IsNotEmpty()
-    name: string;
+    text: string;
 
     @IsString()
     @IsNotEmpty()
