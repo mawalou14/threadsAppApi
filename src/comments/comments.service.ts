@@ -29,6 +29,12 @@ export class CommentsService {
     }).populate(['user', 'parent']).exec();
   }
 
+  getCommentsByParentsId(parentId: string) {
+    return this.commentModel.find({
+      parent: parentId
+    }).populate(['user', 'parent']).exec();
+  }
+
 
 
   findOne(id: number) {
