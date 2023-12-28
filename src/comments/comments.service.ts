@@ -26,8 +26,10 @@ export class CommentsService {
   getTopLevelComments() {
     return this.commentModel.find({
       parent: null
-    })
+    }).populate(['user', 'parent']).exec();
   }
+
+
 
   findOne(id: number) {
     return `This action returns a #${id} comment`;
