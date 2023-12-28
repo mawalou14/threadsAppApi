@@ -13,7 +13,7 @@ export class CommentsService {
   }
 
   findAll() {
-    return `This action returns all comments`;
+    return this.commentModel.find().exec();
   }
 
   findOne(id: number) {
