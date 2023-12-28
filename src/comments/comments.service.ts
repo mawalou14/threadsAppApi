@@ -23,6 +23,12 @@ export class CommentsService {
     return this.commentModel.find().populate(['user', 'parent']).exec();
   }
 
+  getTopLevelComments() {
+    return this.commentModel.find({
+      parent: null
+    })
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} comment`;
   }
